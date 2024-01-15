@@ -19,6 +19,12 @@ public class Doctor {
 		this.phone = phone;
 		this.pateintlist=new ArrayList<>();
 	}
+	public List<Pateint> getPateintlist() {
+		return pateintlist;
+	}
+	public void setPateintlist(List<Pateint> pateintlist) {
+		this.pateintlist = pateintlist;
+	}
 	public String getDocId() {
 		return docId;
 	}

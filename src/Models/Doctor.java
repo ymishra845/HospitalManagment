@@ -19,6 +19,11 @@ public class Doctor {
 		this.phone = phone;
 		this.pateintlist=new ArrayList<>();
 	}
+	@Override
+	public String toString() {
+		return "Doctor [docId=" + docId + ", docDegree=" + docDegree + ", name=" + name + ", phone=" + phone
+				+ ", pateintlist=" + pateintlist + "]";
+	}
 	public List<Pateint> getPateintlist() {
 		return pateintlist;
 	}

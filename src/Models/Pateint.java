@@ -7,21 +7,29 @@ public class Pateint {
 	private int age;
 	private long phone;
 	private String email;
-	private String desease;
+	private String disease;
 	private String gender;
 	private Doctor doctor;
 	private Rooms room;
-	public Pateint(String pId, String name, int age, long phone, String email, String desease, String gender,Doctor doctor,Rooms room) {
+	boolean isAdmit;
+	public Pateint(String pId, String name, int age, long phone, String email, String disease, String gender,Doctor doctor,Rooms room,boolean isAdmit) {
 		super();
 		this.pId = pId;
 		this.name = name;
 		this.age = age;
 		this.phone = phone;
 		this.email = email;
-		this.desease = desease;
+		this.disease = disease;
 		this.gender = gender;
 		this.doctor=doctor;
 		this.room=room;
+		this.isAdmit=isAdmit;
+	}
+	@Override
+	public String toString() {
+		return "Pateint [pId=" + pId + ", name=" + name + ", age=" + age + ", phone=" + phone + ", email=" + email
+				+ ", disease=" + disease + ", gender=" + gender + ", doctor=" + doctor + ", room=" + room + ", isAdmit="
+				+ isAdmit + "]";
 	}
 	public Rooms getRoom() {
 		return room;
@@ -65,11 +73,11 @@ public class Pateint {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getDesease() {
-		return desease;
+	public String getDisease() {
+		return disease;
 	}
-	public void setDesease(String desease) {
-		this.desease = desease;
+	public void setDesease(String disease) {
+		this.disease = disease;
 	}
 	public String getGender() {
 		return gender;

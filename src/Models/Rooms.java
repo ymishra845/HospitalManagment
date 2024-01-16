@@ -13,6 +13,11 @@ public class Rooms {
 		this.pateint = pateint;
 		this.doctor = doctor;
 	}
+	@Override
+	public String toString() {
+		return "Rooms [roomId=" + roomId + ", occupied=" + occupied + ", pateint=" + pateint + ", doctor=" + doctor
+				+ "]";
+	}
 	public String getRoomId() {
 		return roomId;
 	}

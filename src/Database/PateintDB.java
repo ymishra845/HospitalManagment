@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class PateintDB {
 	
 	HashMap<String, Pateint> pateintDB;
-	PateintDB(){
+	public PateintDB(){
 		this.pateintDB=new HashMap<>();
 	}
 	
@@ -14,6 +14,10 @@ public class PateintDB {
 		
        String pId= obj.getpId();
        pateintDB.put(pId, obj);
+	}
+	
+	public int getTotalPateint() {
+		return pateintDB.size();
 	}
 	public Pateint getPateint(String pId) {
 		return pateintDB.get(pId);

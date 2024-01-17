@@ -10,6 +10,7 @@ public class Main {
 		Hospital h= new Hospital("XYX","XYZ",123,"XYZ");
 		h.appointDoctor("123", "MBBS", "Yogesh", 99107, null);
 		h.createRoom();
+		h.admitPateint("Raman", 42, 9934, "raman@44", "male", "migrane");
 
 	}
 

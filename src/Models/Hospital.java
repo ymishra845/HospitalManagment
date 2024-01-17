@@ -5,6 +5,9 @@ import java.util.List;
 import Database.DoctorDB;
 import Database.PateintDB;
 import Database.RoomDB;
+import Services.PateintService;
+import Services.PateintServiceimpl;
+import factory.HospitalObjectFactory;
 
 public class Hospital {
 
@@ -16,15 +19,17 @@ public class Hospital {
 	private DoctorDB doctorDB;
 	private RoomDB roomDB;
 	
+	private PateintService pateintService;
+	private HospitalObjectFactory hospitalObjectFactory;
+	
 	public Hospital(String name, String address, long phone, String email) {
 		super();
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 		this.email = email;
-		this.pateintDB= new PateintDB();
-		this.doctorDB= new DoctorDB();
-		this.roomDB= new RoomDB();
+		this.hospitalObjectFactory= new HospitalObjectFactory();
+		this.pateintService=new PateintServiceimpl(this.pateintDB);
 	}
 	public String getName() {
 		return name;
@@ -83,7 +88,7 @@ public class Hospital {
 	public void createRoom() {
 		int total=roomDB.TotalRooms()+1;
 		String roomId="ROOMID"+total;
-		Rooms room= new Rooms(roomId, false, null, null);
+		Rooms room= new Rooms(roomId, true, null, null);
 		
 		roomDB.addRoomToDB(room);
 		room.setOccupied(true);
